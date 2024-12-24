@@ -1,3 +1,7 @@
 I am making a game known as hangman in a webpage or I want to call on a GUI interface,
 I have made the game in console version in other repository.
 I have uploaded my progress and the game there.
+
+v1.0: made a start of the journey, made a small window with level choosing option. 
+
+v1.1: Updated the ui little bit added footer to the website, and some small changes.
