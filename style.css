@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #1a2238;
+    /* text-align: center; */
+}
+
+#greet {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+    text-shadow: 2px 2px 5px #524929;
+}
+
+#body1 {
+    margin: 5% 20% 5% 20%;
+    border: 2px double rgb(58, 47, 47);
+    border-radius: 10px;
+    background-color: #d8c16f;
+    padding: 1%;
+}
+
+#level_chooser {
+    margin: 1% 75% 0% 0%;
+    text-align: left;
+    /* border: 2px solid black;
+    border-radius: 10px; */
+}
+
+#level_index {
+    font-weight: bolder;
+}
+
+.LEVEL{
+    margin: 5px;
+}
