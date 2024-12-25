@@ -18,6 +18,7 @@ cRadiobutton.forEach(radio => {
 
             default:
                 console.log("failed");
+                return 1;
                 break;
         }
     });
@@ -26,6 +27,16 @@ cRadiobutton.forEach(radio => {
 
 function EASY_LEVEL() {
     console.log("easy");
+
+    document.getElementById("user_guessed_letter").disabled = false;
+    document.getElementById("user_guessed_letter").focus();
+    document.getElementById("user_guessed_letter").title ="guess a letter";
+    document.getElementById("submit").disabled = false;
+    document.getElementById("submit").style.cursor = "pointer";
+    document.getElementById("submit").title = "Check your guess";
+    cRadiobutton.forEach(function (radio) {
+        radio.disabled = true;
+    });
 
     var iRand_word_index = Math.floor(Math.random() * 10);
     var iRemainiing_guesses = 8;
@@ -42,8 +53,11 @@ function EASY_LEVEL() {
 
     console.log(cEasy_words[iRand_word_index] + " and the random number is " + iRand_word_index);
 
-    while (iRemainiing_guesses > 0) {
-        
-    }
-
+    document.getElementById("submit").addEventListener("click", function () {
+        if (document.getElementById("user_guessed_letter").value == cEasy_words[iRand_word_index][0]) {
+            console.log("correct");
+        } else {
+            console.log("Did not match");
+        }
+    });
 }
