@@ -9,3 +9,5 @@ v1.1: Updated the ui little bit added footer to the website, and some small chan
 v1.2: Added favicon to the page, one text box to take user input.
 
 v1.3: Added more little ui changes .< _ >.
+
+v1.4: Added change to the ui element on the basis of user intraction.
