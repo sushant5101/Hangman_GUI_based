@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="fav.png" type="image/x-icon">
+    <link rel="shortcut icon" href="fav.png" type="image/x-icon">
     <title>Hangman</title>
 </head>
 
 <body>
+    <nav id="nav">
+        <img id="logo" src="img/logo.ico" title="Hello" alt="img">
+    </nav>
     <div id="body1">
         <h3 id="greet">Hello and wellcome to the game of hangman<br></h3>
         <form id="level_chooser">
@@ -33,9 +36,11 @@
             </div>
 
         </form><br>
-        <label id="label">Enter your guess letter :</label>
-        <input id="user_guessed_letter" type="text"><br>
-        <hr>
+
+        <label id="inputlabel">Enter your guess a letter :</label>
+        <input id="user_guessed_letter" minlength="0" maxlength="1" autocomplete="off" type="text" disabled title="Choose a level to begin the game">
+        <input id="submit" type="submit" value="Enter" disabled title="Choose a level to begin the game"><br>
+        <!-- <hr> -->
     </div>
     <footer>
         <div id="foot">
