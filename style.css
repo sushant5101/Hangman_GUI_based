@@ -13,15 +13,15 @@ body {
     /* text-align: center; */
 }
 
-#nav{
+#nav {
     position: fixed;
     margin: 1%;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 
-#logo{
-    z-index: 1;
+#logo {
     border: 2px solid white;
     border-radius: 10px;
     box-shadow: 2px 3px 8px black;
@@ -30,7 +30,7 @@ body {
 
 
 #body1 {
-    margin: 5% 20% 5% 20%;
+    margin: 5% 20% 0% 20%;
     border: 2px double rgb(58, 47, 47);
     border-radius: 10px;
     box-shadow: 10px 10px 15px #0d111d;
@@ -61,7 +61,7 @@ body {
     margin: 5px;
 }
 
-#inputlabel{
+#inputlabel {
     font-size: large;
 }
 
@@ -74,16 +74,50 @@ body {
     padding: 2px;
     outline: none;
     font-size: large;
+    text-align: center;
 }
 
 #body1 #submit {
     width: 10%;
     height: 27px;
-    background-color: black;
-    color: white;
+    background-color: rgb(34, 34, 34);
+    color: rgb(82, 80, 80);
     padding: 1px;
-    border: 2px solid black;
+    border: 2px solid rgb(37, 37, 37);
     border-radius: 4px;
+}
+
+/* #remaining_letter_title {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+} */
+
+#remaining_guess_count {
+
+    font-weight: bold;
+}
+
+.remaining-guess-container {
+    display: flex;
+    align-items: center;
+    /* Vertically center the items */
+    gap: 9px;
+    /* Adjust the space between elements if needed */
+}
+
+#used_letter_label {
+    font-size: medium;
+    font-family: sans-serif;
+}
+
+#used_letter_list {
+    margin: 5px 0px 0px 9px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    list-style-type: none;
+    font-size: 20px;
 }
 
 footer {
@@ -93,7 +127,7 @@ footer {
 #foot {
     margin: 5% 20% 0% 20%;
     border: 2px double rgb(58, 47, 47);
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
     box-shadow: 10px 10px 15px #0d111d;
     background-color: #d8c16f;
     padding: 1px 2px 3px 2px;
