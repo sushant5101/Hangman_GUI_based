@@ -5,3 +5,5 @@ I have uploaded my progress and the game there.
 v1.0: made a start of the journey, made a small window with level choosing option. 
 
 v1.1: Updated the ui little bit added footer to the website, and some small changes.
+
+v1.2: Added favicon to the page, one text box to take user input.
