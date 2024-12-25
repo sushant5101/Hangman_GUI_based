@@ -17,7 +17,7 @@
         <h3 id="greet">Hello and wellcome to the game of hangman<br></h3>
         <form id="level_chooser">
 
-            <label id="level_index">choose a level index <br></label>
+            <label for="level_chooser" id="level_index">choose a level index <br></label>
 
             <div class="LEVEL">
                 <input type="radio" id="easy" name="level" value="easy">
@@ -37,10 +37,22 @@
 
         </form><br>
 
-        <label id="inputlabel">Enter your guess a letter :</label>
-        <input id="user_guessed_letter" minlength="0" maxlength="1" autocomplete="off" type="text" disabled title="Choose a level to begin the game">
+        <label for="used_guessed_letter" id="inputlabel">Enter your guessed letter :</label>
+        <input id="user_guessed_letter" minlength="0" maxlength="1" autocomplete="off" type="text" disabled
+            title="Choose a level to begin the game">
         <input id="submit" type="submit" value="Enter" disabled title="Choose a level to begin the game"><br>
-        <!-- <hr> -->
+        <br>
+        <hr>
+        <div class="remaining-guess-container">
+            <h3 id="Remaining_guess_title">Remaining guess: </h3>
+            <p id="remaining_guess_count"></p>
+        </div>
+        <br>
+        <p id="word_length"></p>
+        <br>
+        <label id="used_letter_label" for="used_letter"></label>
+        <ul id="used_letter_list">
+        </ul>
     </div>
     <footer>
         <div id="foot">
