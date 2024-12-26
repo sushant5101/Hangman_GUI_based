@@ -120,6 +120,15 @@ body {
     font-size: 20px;
 }
 
+#used_letter_list li{
+    border: 1px solid rgb(241, 114, 55);
+    text-align: center;
+    margin-left:4px;
+    padding:0px 5px;
+    border-radius: 4px;
+    background-color: #afa16f;
+}
+
 footer {
     display: grid;
 }
