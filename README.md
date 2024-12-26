@@ -11,3 +11,5 @@ v1.2: Added favicon to the page, one text box to take user input.
 v1.3: Added more little ui changes .< _ >.
 
 v1.4: Added change to the ui element on the basis of user intraction.
+
+v1.5: Updated word checker little, changed the style of li element on the basis of answer given. 
