@@ -1,8 +1,8 @@
+console.log("Hello! world");
 const cRadiobutton = document.querySelectorAll('input[name=level]');
 let used_letters = [];
-// console.log("hello");
 
-//========================referencing html ================================
+//========================referencing html (DOC)================================
 
 var submit = document.getElementById("submit");
 var user_input = document.getElementById("user_guessed_letter");
@@ -15,7 +15,7 @@ var incorrect = 0,
     correct_count = 0,
     word_length = 0,
     temp = 0;
-let dashes = []; // Initialize an empty string
+let dashes = []; // Initializing an empty string
 let is_correct = false;
 
 //============================accessing all the radio buttons======================
@@ -28,6 +28,7 @@ cRadiobutton.forEach(radio => {
 
     });
 });
+
 
 
 //=================== function to controll all the levels according to the user input============
@@ -52,6 +53,7 @@ function GAMAE_MANAGER(level) {
     submit.style.color = "white";
     submit.style.borderColor = "black"
     submit.title = "Check your guess";
+
     // =========================words to be used for the easy level=====================
     const easy_words = ["apple", "chair", "happy", "house", "water", "light", "music", "pizza", "river", "tiger"];
 
@@ -60,7 +62,9 @@ function GAMAE_MANAGER(level) {
 
     // ==================words for high level difficulty===================
     const hard_words = ["ostentatious", "nebulous", "esoteric", "surreptitious", "languorous", "quixotic", "ebullient", "lugubrious", "obfuscate", "sesquipedalian"];
-    // ======================================================================
+
+    // ==================Switch to set the required value to the current selected word=====================================
+
     switch (level) {
 
         case "easy":
@@ -84,103 +88,100 @@ function GAMAE_MANAGER(level) {
 
 
     for (let i = 0; i < word_length; i++) {
-        dashes += "_ ";
+        dashes[i] = "_ ";
     }
 
-    word_length_label.innerText = dashes;
-    dashes = [];
+    word_length_label.innerText = dashes; // displaying the dasses according to the length of the selected word
 
-    document.getElementById("user_guessed_letter").addEventListener("keypress", function (event) {
+    document.getElementById("user_guessed_letter").addEventListener("keypress", function (event) { // listening for enter key pressed
         if (event.key === "Enter") {
             event.preventDefault();
             WORD_CHECKER(word_length, word);
         }
     });
 
-    submit.addEventListener("click", function () {
+    submit.addEventListener("click", function () { // listining for enter button click 
         WORD_CHECKER(word_length, word);
     });
-    console.log(word);
 }
 
 
 //==========================function to check the generated word with the user entred letter=================
+
 function WORD_CHECKER(word_length, word) {
 
-    // console.log(word);
+    incorrect = 0;//-------------------resetting the valuse of incorrect count --------------
 
-    // console.log(used_letters.length);
 
-    incorrect = 0;
+    //==================================Logic to check if the entred letter matches with any of the letter present in the selected word=============
+
     for (var i = 0; i < word_length; i++) {
 
-        if (user_input.value.toLowerCase() == used_letters[i]) {
+        if (used_letters.includes(user_input.value)) {
             console.log("allready entred " + user_input.value + " try another");
+            alert("You have allready entred the letter: " + user_input.value);
             break;
         }
         else if (user_input.value.toLowerCase() == word[i]) {
             console.log(user_input.value + " is the correct letter");
-            console.log(dashes);
-            for (let j = 0; j < word_length; j++) {
+
+            for (let j = 0; j < word_length; j++) {  //----------Adding the entred letter to its proper index in the word with the current matched word-------
                 if (j != i) {
-                    dashes[j] = "_ ";
-                    console.log("index " + i + " j = " + j);
-                }
-                else {
                     dashes[i] = word[i] + " ";
                 }
-                console.log(dashes);
-                console.log("index " + i + " j = " + j);
-
             }
-
-
             is_correct = true;
             correct_count++;
         }
-
-        else if (user_input.value.toLowerCase() != word[i]) {
-            // console.log("wrong");
+        else if (user_input.value.toLowerCase() != word[i] && user_input.value != "" && !used_letters.includes(user_input.value)) {
             incorrect++;
         }
     }
 
-    word_length_label.innerText = dashes;
+    word_length_label.innerText = dashes; // displaying the new updated dash---------------
 
+    //============================logic to check the current state incorect or correct, and handelling the remaining guesses count accordingly=====================
 
     if (incorrect == word_length) {
-
         is_correct = false;
         remaining_guesses.innerText = remaining_guesses.innerText - 1;
-        // console.log(remaining_guesses.innerText);
     }
     else if (correct_count == word_length) {
-        console.log("You found all the letters, the word was " + word);
-        // console.log("the word was " + word);
+        alert("You found all the letters, the letter was " + word);
+        location.reload();
     }
 
-    // console.log(correct_count);
+    //============================checking and updating the user their remaining guesses has been finished==========================================
 
-    user_input.focus();
+    if (remaining_guesses.innerText == 0 || remaining_guesses.innerText < 0) {
+        alert("Your remaining guesses has been finished the word was " + word);
+        location.reload();
+    }
 
-    if (!used_letters.includes(user_input.value)) {
+    user_input.focus(); //focussing the user cursor to the input field
+
+    //===================================checking and updating the used letter accordingly===============================================
+    if (!used_letters.includes(user_input.value.toLowerCase())) {
         USED_ADD(user_input.value);
     }
-
-    user_input.value = '';
+    user_input.value = ''; // clearing the input field for the next letter input---------------------------
 }
+
+//====================function to add the user input letter to the used letter list according to its presence in the array=====================
 
 function USED_ADD(user_input) {
     if (user_input.toLowerCase() !== "" && !used_letters.includes(user_input)) {
         used_letters.push(user_input);
         var new_list = document.createElement("li");
         new_list.innerText = user_input;
+
+        // different color of box shadow green box shadow if the user input letter matches with one of the selected word and red if not
+
         if (is_correct) {
             new_list.style.boxShadow = "5px 5px 5px #5CB338, 2px -5px 5px #5CB338, 5px -5px 5px #5CB338, -5px 5px 5px #5CB338";
         } else {
             new_list.style.boxShadow = "5px 5px 15px #FCC737, 2px -5px 15px #F26B0F, 5px -5px 15px #7E1891, -5px 5px 15px #E73879";
         }
-
-        listbody.appendChild(new_list);
+        listbody.appendChild(new_list);//adding a new li element with the inner text as the user input letter
     }
 }
