@@ -94,7 +94,6 @@ body {
 } */
 
 #remaining_guess_count {
-
     font-weight: bold;
 }
 
@@ -104,6 +103,11 @@ body {
     /* Vertically center the items */
     gap: 9px;
     /* Adjust the space between elements if needed */
+}
+
+#word_length{
+font-weight: bold;
+    font-family: sans-serif;
 }
 
 #used_letter_label {
