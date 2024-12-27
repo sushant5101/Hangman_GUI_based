@@ -4,6 +4,7 @@ let used_letters = [];
 
 //========================referencing html (DOC)================================
 
+var radio = document.getElementsByName("level");
 var submit = document.getElementById("submit");
 var user_input = document.getElementById("user_guessed_letter");
 var listbody = document.getElementById("used_letter_list");
@@ -92,6 +93,15 @@ function GAMAE_MANAGER(level) {
     }
 
     word_length_label.innerText = dashes; // displaying the dasses according to the length of the selected word
+
+    document.getElementById('user_guessed_letter').addEventListener('keypress', function (e) {
+        // Allow only alphabetic characters
+        const char = String.fromCharCode(e.keyCode || e.which);
+        if (!/^[a-zA-Z]$/.test(char) && e.key !== "Enter") {
+            e.preventDefault();
+            alert("Enter a valid Alphabet");
+        }
+    });
 
     document.getElementById("user_guessed_letter").addEventListener("keypress", function (event) { // listening for enter key pressed
         if (event.key === "Enter") {
