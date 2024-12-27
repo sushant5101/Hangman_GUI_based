@@ -13,3 +13,5 @@ v1.3: Added more little ui changes .< _ >.
 v1.4: Added change to the ui element on the basis of user intraction.
 
 v1.5: Updated word checker little, changed the style of li element on the basis of answer given. 
+
+v1.6: changed the logic of checking the used words,entred letter for correct and incorrect matches. Changed the behaviour of the unknown word dasses to display the matched word with the selected word.
