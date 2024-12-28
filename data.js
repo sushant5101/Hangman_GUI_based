@@ -21,6 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (username.value == "" || password.value == "") {
             alert("Fill in all the details");
         }else{
-        location.relode();
+        location.reload();
         }
     });
