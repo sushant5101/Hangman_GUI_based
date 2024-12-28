@@ -11,34 +11,34 @@
 
 <body>
     <nav id="nav">
-        <img id="logo" src="img/logo.ico" title="Hello" alt="img">
+        <a href="entry.html"> <img id="logo" src="img/logo.ico" title="Hello" alt="img"></a>
     </nav>
     <div id="body1">
         <h3 id="greet">Hello and wellcome to the game of hangman<br></h3>
         <form id="level_chooser">
 
-            <label for="level_chooser" id="level_index">choose a level index <br></label>
+            <label for="level_chooser" id="level_index">choose a level<br></label>
 
             <div class="LEVEL">
                 <input type="radio" id="easy" name="level" value="easy">
-                <label for="easy">Easy level <br></label>
+                <label for="easy">Easy<br></label>
             </div>
             <div class="LEVEL">
 
                 <input type="radio" id="medium" name="level" value="medium">
-                <label for="medium">Medium level <br></label>
+                <label for="medium">Medium<br></label>
 
             </div>
             <div class="LEVEL">
 
                 <input type="radio" id="hard" name="level" value="hard">
-                <label for="hard">Hard level <br></label>
+                <label for="hard">Hard<br></label>
             </div>
 
         </form><br>
 
-        <label for="used_guessed_letter" id="inputlabel">Enter your guessed letter :</label>
-        <input id="user_guessed_letter" minlength="0" maxlength="1" autocomplete="off" type="text" disabled
+        <label for="used_guessed_letter" id="inputlabel">Enter your letter :</label>
+        <input type="text" id="user_guessed_letter" maxlength="1" autocomplete="off" disabled
             title="Choose a level to begin the game">
         <input id="submit" type="submit" value="Enter" disabled title="Choose a level to begin the game"><br>
         <br>
@@ -78,7 +78,8 @@
         <hr>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <!-- <script src="data.js"></script> -->
 </body>
 
 </html>
