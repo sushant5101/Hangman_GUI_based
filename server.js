@@ -55,5 +55,7 @@ app.post('/data', (req, res) => {
     }
 });
 
-app.get('/', (req, res) => { res.send('Welcome to Hangman!'); });
+app.get('/data', (req, res) => { // Use res.json() to send JSON response 
+    res.json(jsonData); 
+});
 app.listen(port, () => { console.log(`Server running at http://localhost:${port}`); });
