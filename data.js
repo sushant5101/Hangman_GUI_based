@@ -21,10 +21,10 @@ enter.addEventListener('click', () => {
     if (username.value == "" || password.value == "") {
         alert("fill in all the details");
     } else {
-        fetch('http://localhost:3001/data').then(response => response.json()).then(data => {
+        fetch('https://hangman-l19x.onrender.com//data').then(response => response.json()).then(data => {
 
             data.users.push({ name: username.value, password: password.value });
-            fetch('http://localhost:3001/data', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).then(response => response.text()).then(result => {
+            fetch('https://hangman-l19x.onrender.com//data', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).then(response => response.text()).then(result => {
                 console.log(result);
                 enter.innerText = 'User added successfully';
             }).catch(error => { console.error('Error saving data:', error); enter.innerText = 'Error saving data'; });
