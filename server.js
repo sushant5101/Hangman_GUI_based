@@ -55,6 +55,5 @@ app.post('/data', (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});
+app.get('/', (req, res) => { res.send('Welcome to Hangman!'); });
+app.listen(port, () => { console.log(`Server running at http://localhost:${port}`); });
